@@ -47,9 +47,9 @@ export default function RootLayout({ children }) {
   
   return (
     <html lang="pt-BR">
-      {/* <head> descomentar se netlify CMS não funcionar
+      <head> descomentar se netlify CMS não funcionar
         <Script async src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
-      </head> */}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
