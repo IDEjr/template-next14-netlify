@@ -1,5 +1,3 @@
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
 import ImagemComBotao from '@/components/imagemComBotao'
 import ServicosHome from '@/components/servicosHome'
 import Inicio from '@/components/inicio'
