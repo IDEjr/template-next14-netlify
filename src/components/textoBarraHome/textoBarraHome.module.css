@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.bar {
+  background-color: #382F76;
+  height: 8px;
+  width: 40%;
+  align-self: flex-end;
+}
+
+.textContainer {
+  padding-top: 3rem;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 70%;
+}
+
+.text {
+  font-style: italic;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .textContainer {
+    line-height: 3vh;
+    }
+
+  .container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}

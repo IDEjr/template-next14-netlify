@@ -1,0 +1,33 @@
+{
+  "inicioQuemSomos": {
+    "imagem": "/uploads/chris.jpg",
+    "titulo": "QUEM SOMOS",
+    "texto1": "A empresa. Consultoria, empresa júnior da Unisinos, teve sua fundação em setembro de 2021, e hoje é federada junto à Federação das Empresas Juniores do Rio Grande do Sul - FEJERS.",
+    "texto2": "Na empresa., nosso objetivo é claro e poderoso: impulsionar o sucesso de nossos clientes por meio de soluções inovadoras e estratégicas. Comprometemo-nos a ser o parceiro de confiança que catalisa o crescimento e a transformação de negócios. Buscamos não apenas atender, mas superar as expectativas, contribuindo para o desenvolvimento sustentável e a excelência operacional.",
+    "logo": "/uploads/chris.jpg"
+  },
+  "carrosselQuemSomos": {
+    "imagensCarrossel": [
+      "/uploads/chris.jpg",
+      "/uploads/chris.jpg",
+      "/uploads/chris.jpg",
+      "/uploads/chris.jpg",
+      "/uploads/chris.jpg"
+    ]
+  },
+  "valores": {
+    "texto1": "Comprometimento é nosso pilar, impulsionando a excelência empresarial.",
+    "texto2": "Fomentamos a busca constante por melhoria, promovendo crescimento individual e coletivo.",
+    "texto3": "Incentivamos a diversidade, promovendo colaboração e compartilhamento para impulsionar a inovação.",
+    "texto4": "Abraçamos mudança, reconhecendo que flexibilidade é essencial para enfrentar desafios em evolução.",
+    "titulo1": "Comprometimento",
+    "titulo2": "Evolução Contínua",
+    "titulo": "OS VALORES QUE NOS MOVEM",
+    "titulo3": "Cocriação e Coaprendizagem",
+    "titulo4": "Flexibilidade"
+  },
+  "painelMembros": {
+    "titulo": "CONHEÇA NOSSOS MEMBROS",
+    "logo": "/uploads/chris.jpg"
+  }
+}

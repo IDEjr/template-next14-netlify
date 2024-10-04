@@ -1,0 +1,105 @@
+.topPart {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    display: flex;
+  }
+  
+  .postBlock {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .text {
+    top: 50%;
+    left: 8%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .topImg {
+    filter: brightness(40%);
+  }
+  
+  .genero {
+    color : #382F76;
+  }
+  
+  .title {
+    color: white;
+  }
+  
+  .subTitle {
+    color: #382F76;
+  }
+  
+  .details {
+    position: absolute;
+    top: 90%;
+    left: 8%;
+    right: 8%;
+    color: #382F76;
+    display: flex;
+    justify-content: space-between;
+    gap: 30%;
+  }
+  
+  .markDown {
+    display: block;
+    width: 80%;
+    height: auto;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+  
+    padding: 10vh 0vh 0vw;
+  }
+  
+  .markdown :global(p) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: 120%;
+  }
+  
+  .markdown :global(ol) {
+    padding-left: 3vw;
+  }
+  
+  .markdown :global(ul) {
+    padding-left: 3vw;
+  }
+  
+  .markdown :global(img) {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 55vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+  
+  .bottomContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .authorAndPencil {
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    width: 80%;
+    color:#382F76;
+  }
+  
+  .authorName {
+    padding-left: 16px;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 5vh 0vw;
+  }

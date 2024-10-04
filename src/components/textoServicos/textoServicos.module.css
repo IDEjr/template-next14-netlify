@@ -1,0 +1,33 @@
+.mainContainer {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: white;
+}
+
+.textContainer {
+  width: 80%;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.bar {
+  background-color: #382F76;
+  width: 30%;
+  height: 8px;
+}
+
+
+@media only screen and (max-width: 756px) {
+  .titleContainer {
+    width: 60%;
+  }
+
+  .bar {
+    width: 50%;
+  }
+}

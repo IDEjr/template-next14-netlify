@@ -1,0 +1,203 @@
+.footer {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1vh;
+  position: absolute;
+}
+
+.bgImgHandle {
+  position: relative;
+  z-index: 0;
+}
+
+.watermarkCover {
+  width: 120px;
+  height: 40px;
+  position: relative;
+}
+
+.watermark {
+  width: 100%;
+  height: 100%;
+}
+
+.topPart {
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-start;
+  height: 80%;
+  align-items: flex-start;
+  gap: 10vw;
+  z-index: 1;
+}
+
+.empresaLogo {
+  margin-left: 100px;
+  width: 150px;
+  height: 150px;
+}
+
+.contactSocials {
+  display:flex;
+  flex-direction: column;
+  padding-right: 5vw;
+  gap: 1vh;
+  align-items: center;
+  text-align: center;
+}
+
+.contactText {
+  color: #382F76;
+}
+
+.socialIcons {
+  display: flex;
+  cursor: alias;
+  width: 70%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottomPart {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 20%;
+  padding-right: 2vw;
+  align-items: center;
+  z-index: 1;
+}
+
+.footerText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+  justify-content: center;
+  align-items: center;
+  color: #777;
+  justify-content: flex-end;
+}
+
+.membershipIcons {
+  display:flex;
+  align-self: flex-start;
+  gap: 2vw;
+  align-items: center;
+}
+
+.developedBy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.developedByLink {
+  display: flex;
+  align-items: center;
+  color: #777;
+}
+
+.developedByCover {
+  width: 50px;
+  height: 20px;
+  position: relative;
+  margin: 1rem;
+}
+
+.ideLogo {
+  width: 100%;
+  height: auto;
+}
+
+
+@media (max-width: 870px) {
+  .topPart {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80%;
+    gap: 0;
+  }
+
+  .contactText {
+    padding-top: 2vh;
+  }
+
+  .empresaLogo {
+    margin-left: 0px;
+  }
+
+  .contactSocials {
+    padding: 0;
+  }
+
+  .bottomPart {
+    display:flex;
+    padding-right: 0;
+    flex-direction: column;
+    align-items: center;
+    height: 20%;
+    padding-top: 1rem;
+  }
+  
+  .footerText {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .membershipIcons {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .watermarkCover {
+    width: 90px;
+    height: 30px;
+    position: relative;
+  }
+
+  .developedByCover {
+    width: 40px;
+    height: 16px;
+    position: relative;
+  }
+
+  .empresaLogo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .contactSocials {
+    padding-right: 0;
+  }
+
+  .contactText {
+    display: flex;
+    justify-content: center;
+  }
+
+  .socialIcons {
+    justify-content: center;
+    gap: +5vw;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .membershipIcons {
+    padding-left: 5vw;
+  }
+}

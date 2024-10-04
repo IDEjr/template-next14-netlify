@@ -1,0 +1,43 @@
+.carrosselImage {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), var(--bg-image, none);
+}
+
+.imagemCarrossel {
+  object-fit: cover;
+  filter: brightness(40%);
+}
+
+.swiperContainer {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  top: 50%;
+  left: 8%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo {
+  left: 7.9%;
+  top: 35%;
+  position: absolute;
+  color: white;
+}
+
+.tituloPost {
+  color: white;
+}
+
+.generoPrevia {
+  color: #382F76;
+}

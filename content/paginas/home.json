@@ -1,0 +1,30 @@
+{
+  "inicioHome": {
+    "imagem": "/uploads/chris.jpg",
+    "titulo": "POTENCIALIZAMOS O SEU NEGÓCIO",
+    "texto": "Bem-vindo à empresa! Somos a empresa. Consultoria, a Empresa Júnior da Universidade do Vale do Rio dos Sinos (Unisinos), nascida em 2021 com o propósito de transformar desafios em oportunidades. Composta por jovens talentosos e comprometidos com a excelência acadêmica, buscamos impactar positivamente nossos clientes e a sociedade em que estamos inseridos."
+  },
+  "imgBotaoRes": {
+    "imagem": "/uploads/chris.jpg",
+    "titulo": "MELHORE SEUS RESULTADOS",
+    "texto": "Na empresa, entendemos que o sucesso dos negócios resempresa na capacidade de inovar e superar desafios. Desbloqueie oportunidades e alcance novos horizontes com as soluções inovadoras que oferecemos.",
+    "textoBotao": "Entre em Contato"
+  },
+  "servicosHome": {
+    "tituloServicos": "NOSSOS SERVIÇOS"
+  },
+  "imgBotaoMem": {
+    "imagem": "/uploads/chris.jpg",
+    "texto": "Faça parte da nossa equipe e amplie seu conhecimento em consultoria empresarial. Na empresa. Consultoria, você se prepara para um futuro de excelência profissional. Junte-se a nós e trilhe um caminho de aprendizado e realizações.",
+    "titulo": "MEMBROS",
+    "textoBotao": "Seja Membro"
+  },
+  "footer": {
+    "linkedin": "https://www.linkedin.com/company/empresa-j%C3%BAnior-ide",
+    "email": "contato@idejr.com.br",
+    "instagram": "https://www.instagram.com/ide_jr/"
+  },
+  "carrosselHome": {
+    "tituloCarrossel": "NOVIDADES"
+  }
+}
