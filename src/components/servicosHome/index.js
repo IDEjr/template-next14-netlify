@@ -1,15 +1,13 @@
-"use client"
+"use client";
 
-import Image from 'next/image'
-import styles from './servicosHome.module.css'
-import Link from 'next/link'
+import Image from "next/image";
+import styles from "./servicosHome.module.css";
+import Link from "next/link";
 
+function Servico(servico) {
+  const id = servico.nome.replace(/ /g, "_");
 
-function Servico( servico ) {
-  
-  const id = servico.nome.replace(/ /g, '_');
-
-  return(
+  return (
     <>
       <Link href={`/servicos/#${id}`}>
         <div className={styles.serviceContainer}>
@@ -21,7 +19,7 @@ function Servico( servico ) {
               src={servico.imagem}
               className={styles.serviceImg}
               fill
-              style={{objectFit: 'cover'}}
+              style={{ objectFit: "cover" }}
               quality={100}
               alt="Logo"
             />
@@ -29,24 +27,19 @@ function Servico( servico ) {
         </div>
       </Link>
     </>
-  )
+  );
 }
 
-
 export default function ServicosHome({ titulo, servicos }) {
-
-  return(
+  return (
     <>
       <div className={styles.container}>
         <h2 className={styles.titleText}>{titulo}</h2>
         <div className={styles.serviceFrame}>
-          {servicos && servicos.map((servico, i) => (
-            <div key={i}>
-                {Servico(servico)}
-            </div>
-          ))}
+          {servicos &&
+            servicos.map((servico, i) => <div key={i}>{Servico(servico)}</div>)}
         </div>
       </div>
     </>
-  )
+  );
 }

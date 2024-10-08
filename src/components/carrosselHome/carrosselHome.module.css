@@ -23,14 +23,13 @@
 
 .titleSection {
   padding-bottom: 5rem;
-  color: #382F76;
+  color: #382f76;
   text-align: center;
   width: 100%;
   display: block;
 }
 
-
-@media only screen  and (min-width: 1281px) and (max-width: 1440px) {
+@media only screen and (min-width: 1281px) and (max-width: 1440px) {
   .swiperIndi {
     padding: 0rem 3rem 3rem 3rem;
   }
@@ -39,8 +38,7 @@
   }
 }
 
-
-@media only screen  and (min-width: 577px) and (max-width: 1280px) {
+@media only screen and (min-width: 577px) and (max-width: 1280px) {
   .swiperIndi {
     padding: 0rem 3rem 3rem 3rem;
   }
@@ -49,8 +47,7 @@
   }
 }
 
-
-@media only screen  and (max-width: 576px) and (orientation: portrait) {
+@media only screen and (max-width: 576px) and (orientation: portrait) {
   .swiperIndi {
     padding: 0rem 2rem 2rem 2rem;
   }

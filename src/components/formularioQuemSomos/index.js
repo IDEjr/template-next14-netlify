@@ -1,23 +1,22 @@
-"use client"
+"use client";
 
-import Image from 'next/image'
-import styles from './formularioQuemSomos.module.css'
-import { sendContactForm } from '@/lib/sendForm'
-import { useForm } from 'react-hook-form'
-import { isEmail, isMobilePhone } from 'validator'
-import { FaRegComment, FaRegEnvelope, FaHome } from 'react-icons/fa'
+import Image from "next/image";
+import styles from "./formularioQuemSomos.module.css";
+import { sendContactForm } from "@/lib/sendForm";
+import { useForm } from "react-hook-form";
+import { isEmail, isMobilePhone } from "validator";
+import { FaRegComment, FaRegEnvelope, FaHome } from "react-icons/fa";
 
-
-function createWhatsAppLink( celular ) {
-  const celularPuro = celular.replace(/[^\d]/g, '');
+function createWhatsAppLink(celular) {
+  const celularPuro = celular.replace(/[^\d]/g, "");
 
   return `https://wa.me/${celularPuro}`;
 }
 
-function formatPhoneNumber( value ) {
-  const numericValue = value.replace(/\D/g, '');
-  
-  let formattedValue = '';
+function formatPhoneNumber(value) {
+  const numericValue = value.replace(/\D/g, "");
+
+  let formattedValue = "";
   if (numericValue.length >= 1) {
     formattedValue += `(${numericValue.slice(0, 2)}`;
   }
@@ -27,11 +26,11 @@ function formatPhoneNumber( value ) {
   if (numericValue.length >= 7) {
     formattedValue += `-${numericValue.slice(7, 11)}`;
   }
-  
+
   return formattedValue;
 }
 
-function allowToEnterPhoneNumber( event ) {
+function allowToEnterPhoneNumber(event) {
   const charCode = event.keyCode || event.which;
 
   // Permite backspace
@@ -40,19 +39,19 @@ function allowToEnterPhoneNumber( event ) {
   }
 
   const currentValue = event.target.value;
-  const formattedValue = formatPhoneNumber(currentValue + String.fromCharCode(charCode));
+  const formattedValue = formatPhoneNumber(
+    currentValue + String.fromCharCode(charCode),
+  );
 
   event.target.value = formattedValue;
 
   event.preventDefault();
 }
 
+function formatSemester(value) {
+  const numericValue = value.replace(/\D/g, "");
 
-
-function formatSemester( value ) {
-  const numericValue = value.replace(/\D/g, '');
-
-  let formattedValue = '';
+  let formattedValue = "";
   if (numericValue.length >= 1) {
     formattedValue += `${numericValue.slice(0, 4)}`;
   }
@@ -63,7 +62,7 @@ function formatSemester( value ) {
   return formattedValue;
 }
 
-function allowToEnterSemester( event ) {
+function allowToEnterSemester(event) {
   const charCode = event.keyCode || event.which;
 
   // Permite backspace
@@ -72,16 +71,16 @@ function allowToEnterSemester( event ) {
   }
 
   const currentValue = event.target.value;
-  const formattedValue = formatSemester(currentValue + String.fromCharCode(charCode));
+  const formattedValue = formatSemester(
+    currentValue + String.fromCharCode(charCode),
+  );
 
   event.target.value = formattedValue;
 
   event.preventDefault();
 }
 
-
 export default function FormularioQuemSomos({ contato, forms }) {
-
   const {
     register,
     handleSubmit,
@@ -92,29 +91,22 @@ export default function FormularioQuemSomos({ contato, forms }) {
   const onSubmit = async (data) => {
     try {
       await sendContactForm(data, "contactMembers");
-      reset()
+      reset();
     } catch (error) {
       console.error("Error sending contact form:", error);
     }
   };
-  
+
   const whatsappLink = createWhatsAppLink(contato.celular);
 
-  return(
+  return (
     <>
-      <div id='formQuemSomos'></div>
+      <div id="formQuemSomos"></div>
       <div className={styles.mainContainer}>
         <div className={styles.logo}>
-          <Image
-            src={forms.logo}
-            width={150}
-            height={150}
-            alt="Logo"
-          />
+          <Image src={forms.logo} width={150} height={150} alt="Logo" />
         </div>
-        <h2 className={styles.title}>
-          {forms.tituloServicos}
-        </h2>
+        <h2 className={styles.title}>{forms.tituloServicos}</h2>
         <div className={styles.formAndContact}>
           <div className={styles.formContainer}>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -125,7 +117,7 @@ export default function FormularioQuemSomos({ contato, forms }) {
                   type="text"
                   placeholder="Nome*"
                   {...register("nome", {
-                    required: true
+                    required: true,
                   })}
                 />
                 {errors?.nome?.type === "required" && (
@@ -148,7 +140,7 @@ export default function FormularioQuemSomos({ contato, forms }) {
                     <p className={styles.error_message}>Campo obrigatório.</p>
                   )}
                   {errors?.email?.type === "validate" && (
-                  <p className={styles.error_message}>Email inválido</p>
+                    <p className={styles.error_message}>Email inválido</p>
                   )}
                 </div>
                 <div className={styles.smallField}>
@@ -161,7 +153,7 @@ export default function FormularioQuemSomos({ contato, forms }) {
                     placeholder="Celular*"
                     {...register("celular", {
                       required: true,
-                      validate: (value) => isMobilePhone(value, 'pt-BR'),
+                      validate: (value) => isMobilePhone(value, "pt-BR"),
                     })}
                   />
                   {errors?.celular?.type === "required" && (
@@ -180,12 +172,12 @@ export default function FormularioQuemSomos({ contato, forms }) {
                     type="text"
                     placeholder="Curso*"
                     {...register("curso", {
-                      required: true
+                      required: true,
                     })}
-                    />
-                    {errors?.curso?.type === "required" && (
-                      <p className={styles.error_message}>Campo obrigatório</p>
-                    )}
+                  />
+                  {errors?.curso?.type === "required" && (
+                    <p className={styles.error_message}>Campo obrigatório</p>
+                  )}
                 </div>
                 <div className={styles.smallField}>
                   <input
@@ -197,7 +189,7 @@ export default function FormularioQuemSomos({ contato, forms }) {
                     placeholder="Semestre*"
                     {...register("semestre", {
                       required: true,
-                      validate: (value) => /^\d{4}\/\d$/.test(value)
+                      validate: (value) => /^\d{4}\/\d$/.test(value),
                     })}
                   />
                   {errors?.semestre?.type === "required" && (
@@ -215,7 +207,7 @@ export default function FormularioQuemSomos({ contato, forms }) {
                   type="text"
                   placeholder="Assunto*"
                   {...register("assunto", {
-                    required: true
+                    required: true,
                   })}
                 />
                 {errors?.assunto?.type === "required" && (
@@ -224,12 +216,16 @@ export default function FormularioQuemSomos({ contato, forms }) {
               </div>
               <div className={styles.largeField}>
                 <textarea
-                  className={styles.mensagem+" "+(errors?.mensagem && styles.input_error)}
+                  className={
+                    styles.mensagem +
+                    " " +
+                    (errors?.mensagem && styles.input_error)
+                  }
                   id="mensagem"
                   type="text"
                   placeholder="Sua mensagem"
                   {...register("mensagem", {
-                    required: true
+                    required: true,
                   })}
                 />
                 {errors?.mensagem?.type === "required" && (
@@ -242,20 +238,32 @@ export default function FormularioQuemSomos({ contato, forms }) {
             </form>
           </div>
           <div className={styles.contactContainer}>
-            <a href={whatsappLink} target="_blank" className={styles.contactRows}>
-              <div><FaRegComment size={30} className={styles.icons}/></div>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              className={styles.contactRows}
+            >
+              <div>
+                <FaRegComment size={30} className={styles.icons} />
+              </div>
               <div>{contato.celular}</div>
             </a>
             <a href={`mailto:${contato.email}`} className={styles.contactRows}>
-              <div><FaRegEnvelope size={30} className={styles.icons}/></div>
+              <div>
+                <FaRegEnvelope size={30} className={styles.icons} />
+              </div>
               <div>{contato.email}</div>
             </a>
             <div className={styles.contactRows}>
-              <div><FaHome size={30} className={styles.icons}/></div>
+              <div>
+                <FaHome size={30} className={styles.icons} />
+              </div>
               <div>{contato.endereco}</div>
             </div>
             <div className={styles.contactRows}>
-              <div><FaHome size={30} className={styles.icons}/></div>
+              <div>
+                <FaHome size={30} className={styles.icons} />
+              </div>
               <div>{contato.endereco}</div>
             </div>
           </div>
@@ -263,4 +271,4 @@ export default function FormularioQuemSomos({ contato, forms }) {
       </div>
     </>
   );
-};
+}

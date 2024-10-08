@@ -1,8 +1,8 @@
-import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
-import { handleJSONfile } from '@/utils/jsonHandler'
-import Script from 'next/script'
-import React from 'react'
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import { handleJSONfile } from "@/utils/jsonHandler";
+import Script from "next/script";
+import React from "react";
 
 import localFont from "next/font/local";
 import "./globals.css";
@@ -45,20 +45,23 @@ export default function RootLayout({ children }) {
   const foo = handleJSONfile(`./content/navFooter/footer.json`);
   const contato = handleJSONfile(`./content/contato/contato.json`);
   const nav = handleJSONfile(`./content/navFooter/navbar.json`);
-  
+
   return (
     <html lang="pt-BR">
       <head>
-        <Script async src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
+        <Script
+          async
+          src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <React.Fragment>
-        <Navbar contato = {contato} nav = {nav}/>
-      </React.Fragment>
+        <React.Fragment>
+          <Navbar contato={contato} nav={nav} />
+        </React.Fragment>
         {children}
-      <Footer contato = {contato} footer = {foo}/>
+        <Footer contato={contato} footer={foo} />
       </body>
     </html>
   );

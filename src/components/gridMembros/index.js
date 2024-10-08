@@ -1,9 +1,8 @@
-"use client"
+"use client";
 
-import Image from 'next/image'
-import styles from './gridMembros.module.css'
-import CardMembros from '@/components/cardMembro'
-
+import Image from "next/image";
+import styles from "./gridMembros.module.css";
+import CardMembros from "@/components/cardMembro";
 
 export default function GridMembros({ titulo, logo, membros }) {
   let presidencia = [];
@@ -14,22 +13,29 @@ export default function GridMembros({ titulo, logo, membros }) {
   let consultoria = [];
   let aux = membros[0];
   for (let i in membros) {
-    if(membros[i].posicao == 'Presidência') {
+    if (membros[i].posicao == "Presidência") {
       presidencia.push(membros[i]);
-    } else if(membros[i].posicao == ('Vice-Presidência')) {
+    } else if (membros[i].posicao == "Vice-Presidência") {
       vice_presidencia.push(membros[i]);
-    } else if(membros[i].posicao.includes('Diretoria')) {
+    } else if (membros[i].posicao.includes("Diretoria")) {
       diretoria.push(membros[i]);
-    } else if(membros[i].posicao.includes('Assessoria')) {
+    } else if (membros[i].posicao.includes("Assessoria")) {
       assessoria.push(membros[i]);
-    } else if(membros[i].posicao.includes('Gerência')) {
+    } else if (membros[i].posicao.includes("Gerência")) {
       gerencia.push(membros[i]);
-    } else if(membros[i].posicao.includes('Consultoria')) {
+    } else if (membros[i].posicao.includes("Consultoria")) {
       consultoria.push(membros[i]);
     }
   }
 
-  membros = [...presidencia,...vice_presidencia,...diretoria,...assessoria,...gerencia,...consultoria];
+  membros = [
+    ...presidencia,
+    ...vice_presidencia,
+    ...diretoria,
+    ...assessoria,
+    ...gerencia,
+    ...consultoria,
+  ];
   return (
     <>
       <div className={styles.chamariz}>
@@ -42,16 +48,17 @@ export default function GridMembros({ titulo, logo, membros }) {
           alt="Logo"
         />
         <ul className={styles.membrosGrid}>
-          {membros && membros.map((membro, i) => (
-            <CardMembros
-              className={styles.membroInd}
-              key={i}
-              nome={membro.nome}
-              posicao={membro.posicao}
-              imagem={membro.imagem}
-              linkedin={membro.linkedin}
-            />
-          ))}
+          {membros &&
+            membros.map((membro, i) => (
+              <CardMembros
+                className={styles.membroInd}
+                key={i}
+                nome={membro.nome}
+                posicao={membro.posicao}
+                imagem={membro.imagem}
+                linkedin={membro.linkedin}
+              />
+            ))}
         </ul>
       </div>
     </>

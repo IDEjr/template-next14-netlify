@@ -1,13 +1,24 @@
-"use client"
+"use client";
 
-import Link from 'next/link'
-import Image from 'next/image'
-import styles from './cardPost.module.css'
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./cardPost.module.css";
 
-export default function CardPost({ fileName, imagem, titulo, data, previa, autor}) {
-
+export default function CardPost({
+  fileName,
+  imagem,
+  titulo,
+  data,
+  previa,
+  autor,
+}) {
   var dataForm;
-  dataForm = data.substring(8, 10) + '/' + data.substring(5, 7) + '/' + data.substring(0, 4);
+  dataForm =
+    data.substring(8, 10) +
+    "/" +
+    data.substring(5, 7) +
+    "/" +
+    data.substring(0, 4);
 
   return (
     <>
@@ -18,7 +29,7 @@ export default function CardPost({ fileName, imagem, titulo, data, previa, autor
               <Image
                 src={imagem}
                 fill
-                style={{objectFit: 'cover'}}
+                style={{ objectFit: "cover" }}
                 alt="Post"
               />
             </div>

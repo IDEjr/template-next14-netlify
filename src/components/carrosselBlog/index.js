@@ -1,40 +1,37 @@
-"use client"
+"use client";
 
-import Link from 'next/link'
-import Image from 'next/image'
-import styles from './carrosselBlog.module.css'
-import { register } from 'swiper/element/bundle'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./carrosselBlog.module.css";
+import { register } from "swiper/element/bundle";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 register();
 
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/scrollbar'
-
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 export default function CarrosselBlog({ posts, titulo }) {
-  
   const arrPosts = [];
   var recents = [];
 
-  for (const i in posts)
-  { 
+  for (const i in posts) {
     arrPosts.push(posts[i]);
-    arrPosts[i].data = new Date(arrPosts[i].data)
+    arrPosts[i].data = new Date(arrPosts[i].data);
   }
 
   function ordemDecrescente(a, b) {
     return b.data - a.data;
   }
-  posts.sort(ordemDecrescente)
+  posts.sort(ordemDecrescente);
 
   for (let i = 0; i < arrPosts.length; i++) {
-    arrPosts[i].data = arrPosts[i].data.toISOString().split('T')[0];
+    arrPosts[i].data = arrPosts[i].data.toISOString().split("T")[0];
   }
   for (let i = 0; i < 3; i++) {
-    recents.push(posts[i])
+    recents.push(posts[i]);
   }
 
   return (
@@ -47,18 +44,18 @@ export default function CarrosselBlog({ posts, titulo }) {
             "--swiper-pagination-bullet-inactive-color": "#382F76",
             "--swiper-pagination-bullet-inactive-opacity": "0.5",
             "--swiper-pagination-bullet-size": "10px",
-            "--swiper-pagination-bullet-horizontal-gap": " 15px"
+            "--swiper-pagination-bullet-horizontal-gap": " 15px",
           }}
           slidesPerView={1}
           loop={true}
           autoplay={{
             delay: 3000,
-            disableOnInteraction: false
+            disableOnInteraction: false,
           }}
           pagination={{
             enabled: true,
             clickable: true,
-            dynamicBullets: true
+            dynamicBullets: true,
           }}
           grabCursor={true}
           className={styles.swiperContainer}

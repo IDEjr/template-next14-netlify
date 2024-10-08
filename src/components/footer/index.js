@@ -1,23 +1,21 @@
-"use client"
+"use client";
 
-import Link from 'next/link'
-import Image from 'next/image'
-import styles from './footer.module.css'
-import { FaInstagram, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./footer.module.css";
+import { FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-import logoEmpresa from '../../../public/uploads/img/IDE_logo.png'
-
+import logoEmpresa from "../../../public/uploads/img/IDE_logo.png";
 
 const handleMove = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 export default function Footer({ contato, footer }) {
-  
   return (
     <>
       <div className={styles.footer}>
-        <div className={styles.linearGradient}/>
+        <div className={styles.linearGradient} />
         <div className={styles.topPart}>
           {/* <Link href="/" onClick={handleMove}>
               <Image
@@ -29,49 +27,71 @@ export default function Footer({ contato, footer }) {
               />
           </Link> */}
           <div className={styles.contactSocials}>
-            <h3 className={styles.contactText}>
-              {footer.textoContato}
-            </h3>
+            <h3 className={styles.contactText}>{footer.textoContato}</h3>
             <div className={styles.socialIcons}>
-              <a className={styles.linkedinIcon} href={contato.linkedin} target="_blank">
-                <FaLinkedin size={40}/>
+              <a
+                className={styles.linkedinIcon}
+                href={contato.linkedin}
+                target="_blank"
+              >
+                <FaLinkedin size={40} />
               </a>
-              <a className={styles.mailIcon} href={`mailto:${contato.email}`} target="_blank">
-                <FaEnvelope size={40}/>
+              <a
+                className={styles.mailIcon}
+                href={`mailto:${contato.email}`}
+                target="_blank"
+              >
+                <FaEnvelope size={40} />
               </a>
-              <a className={styles.instagramIcon} href={contato.instagram} target="_blank">
-                <FaInstagram size={40}/>
+              <a
+                className={styles.instagramIcon}
+                href={contato.instagram}
+                target="_blank"
+              >
+                <FaInstagram size={40} />
               </a>
             </div>
           </div>
         </div>
         <div className={styles.bottomPart}>
           <div className={styles.membershipIcons}>
-            <a className={styles.watermarkCover} href={footer.link1} target='_blank'>
+            <a
+              className={styles.watermarkCover}
+              href={footer.link1}
+              target="_blank"
+            >
               <Image
                 src={footer.watermark1}
                 fill
-                style={{objectFit: 'contain'}}
+                style={{ objectFit: "contain" }}
                 className={styles.watermark}
                 quality={100}
                 alt={footer.link1}
               />
             </a>
-            <a className={styles.watermarkCover} href={footer.link2} target='_blank'>
+            <a
+              className={styles.watermarkCover}
+              href={footer.link2}
+              target="_blank"
+            >
               <Image
                 src={footer.watermark2}
                 fill
-                style={{objectFit: 'contain'}}
+                style={{ objectFit: "contain" }}
                 className={styles.watermark}
                 quality={100}
                 alt={footer.link2}
               />
             </a>
-            <a className={styles.watermarkCover} href={footer.link3} target='_blank'>
+            <a
+              className={styles.watermarkCover}
+              href={footer.link3}
+              target="_blank"
+            >
               <Image
                 src={footer.watermark3}
                 fill
-                style={{objectFit: 'contain'}}
+                style={{ objectFit: "contain" }}
                 className={styles.watermark}
                 quality={100}
                 alt={footer.link3}
@@ -83,17 +103,21 @@ export default function Footer({ contato, footer }) {
           </div>
         </div>
         <div className={styles.developedBy}>
-            <a className={styles.developedByLink} href="https://idejr.com.br" target='_blank'>
-              <div className={styles.developedByCover}>
-                  <Image
-                    src={logoEmpresa}
-                    alt="Logo da IDE Jr"
-                    className={styles.ideLogo}
-                  />
-              </div>
-              <p>Desenvolvido por IDE - UFRGS</p>
-            </a>
-          </div>
+          <a
+            className={styles.developedByLink}
+            href="https://idejr.com.br"
+            target="_blank"
+          >
+            <div className={styles.developedByCover}>
+              <Image
+                src={logoEmpresa}
+                alt="Logo da IDE Jr"
+                className={styles.ideLogo}
+              />
+            </div>
+            <p>Desenvolvido por IDE - UFRGS</p>
+          </a>
+        </div>
       </div>
     </>
   );

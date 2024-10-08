@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Documentação do Template Next.js 14 + Netlify
 
-## Getting Started
+Este documento fornece uma visão geral da estrutura do projeto Next.js, detalhando os principais diretórios e arquivos.
 
-First, run the development server:
+## Estrutura do Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. `content/`
+Este diretório contém arquivos que representam o conteúdo estático do site, organizados em várias seções, como casos de estudo, informações de contato, definições de formulários, gêneros de conteúdo, e páginas principais como "blog", "home", "quem somos" e "serviços".
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. `public/`
+Armazena recursos estáticos que podem ser acessados diretamente, como imagens. Este diretório contém subpastas para uploads de arquivos e configuração do painel admin do Netlify.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. `src/`
+O diretório `src` é onde a lógica do aplicativo é desenvolvida, dividido nas partes:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **app/**: Contém a estrutura principal do aplicativo, incluindo rotas para a API e páginas principais.
+- **components/**: Armazena componentes reutilizáveis do React, organizados em subpastas.
+- **lib/**: Armazena bibliotecas auxiliares para funcionalidades específicas.
+- **utils/**: Contém utilitários para manipulação de dados e envio de e-mails.
 
-## Learn More
+### 4. Arquivos de Configuração
+- **package.json**: Define as dependências do projeto e scripts de execução.
+- **tailwind.config.js**: Configurações do Tailwind CSS.
 
-To learn more about Next.js, take a look at the following resources:
+## Comandos npm run
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O arquivo `package.json` contém os seguintes scripts que podem ser executados usando o comando `npm run <script>`:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **`npm run dev`**: Inicia o servidor de desenvolvimento do Next.js. O aplicativo será executado em modo de desenvolvimento, permitindo visualização em tempo real das alterações feitas no código em [http://localhost:3000](http://localhost:3000).
 
-## Deploy on Vercel
+- **`npm run build`**: Compila o aplicativo para produção, otimizando o código e gerando os arquivos necessários para o deploy. Esse comando deve ser executado antes de iniciar a aplicação em modo de produção.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **`npm run lint`**: Executa o ESLint para verificar a qualidade do código e garantir que ele siga as regras definidas. É uma boa prática executar esse comando antes de fazer commits.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **`npm run format`**: Formata o código usando o Prettier. Esse comando garante que o código siga um estilo consistente, facilitando a leitura e manutenção.

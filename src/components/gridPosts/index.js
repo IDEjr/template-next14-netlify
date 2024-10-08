@@ -1,15 +1,14 @@
-"use client"
+"use client";
 
-import styles from './gridPosts.module.css'
-import CardPost from '@/components/cardPost'
+import styles from "./gridPosts.module.css";
+import CardPost from "@/components/cardPost";
 
 export default function GridPosts({ posts }) {
-  
   return (
     <>
       <div className={styles.container}>
         <section className={styles.postsGrid}>
-            {posts.map((post, i) => (
+          {posts.map((post, i) => (
             <CardPost
               key={i}
               fileName={post.fileName}
@@ -19,7 +18,7 @@ export default function GridPosts({ posts }) {
               previa={post.previa}
               autor={post.autor}
             />
-        ))}
+          ))}
         </section>
       </div>
     </>

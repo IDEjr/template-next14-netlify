@@ -1,29 +1,32 @@
-import Image from 'next/image'
-import styles from './slug.module.css'
-import { handleJSONfile } from '@/utils/jsonHandler'
-import { handleJSONfiles } from '@/utils/jsonHandler'
-import { RxPencil1 } from 'react-icons/rx'
-import ReactMarkdown from 'react-markdown'
-import React from 'react'
-
+import Image from "next/image";
+import styles from "./slug.module.css";
+import { handleJSONfile } from "@/utils/jsonHandler";
+import { handleJSONfiles } from "@/utils/jsonHandler";
+import { RxPencil1 } from "react-icons/rx";
+import ReactMarkdown from "react-markdown";
+import React from "react";
 
 // const handleMove = () => {
 //   window.scrollTo({ top: 0, behavior: "smooth" });
 // };
 
 export default function Posts({ params }) {
-
   const post = handleJSONfile(`./content/posts/${params.slug}.json`);
   const blog = handleJSONfile(`./content/paginas/blog.json`);
 
-  const posts = handleJSONfiles('content/posts');
+  const posts = handleJSONfiles("content/posts");
 
-  const paths = posts.map(post => {
-    return { params: { slug: post.fileName } }
+  const paths = posts.map((post) => {
+    return { params: { slug: post.fileName } };
   });
 
-    var dataForm;
-    dataForm = post.data.substring(8, 10) + '/' + post.data.substring(5, 7) + '/' + post.data.substring(0, 4);
+  var dataForm;
+  dataForm =
+    post.data.substring(8, 10) +
+    "/" +
+    post.data.substring(5, 7) +
+    "/" +
+    post.data.substring(0, 4);
 
   return (
     <>
@@ -33,7 +36,7 @@ export default function Posts({ params }) {
             src={post.imagemCapa}
             fill
             className={styles.topImg}
-            style={{objectFit: 'cover', background: 'black'}}
+            style={{ objectFit: "cover", background: "black" }}
             alt="Imagem Capa"
           />
           <div className="newStyle"></div>
@@ -47,9 +50,7 @@ export default function Posts({ params }) {
               <a href={post.linkedin} target="_blank" className={styles.autor}>
                 {post.autor}
               </a>
-              <p className={styles.data}>
-                {dataForm}
-              </p>
+              <p className={styles.data}>{dataForm}</p>
             </div>
           </div>
         </div>
@@ -69,15 +70,14 @@ export default function Posts({ params }) {
           </div>
           <div className={styles.buttonContainer}>
             <button /* onClick={handleMove}*/>
-            {blog.inicioBlog.textoBotao}
+              {blog.inicioBlog.textoBotao}
             </button>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
-
 
 // export async function getStaticProps({ params: { slug } }) {
 
@@ -91,7 +91,6 @@ export default function Posts({ params }) {
 //     props: { post, nav, foo, blog, contato },
 //   };
 // }
-
 
 // export async function getStaticPaths() {
 //   const posts = handleJSONfiles('content/posts');

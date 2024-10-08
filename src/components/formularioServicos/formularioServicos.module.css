@@ -1,6 +1,6 @@
 .mainContainer {
   background-color: #262626;
-  color: #382F76;
+  color: #382f76;
   margin-top: 10rem;
   justify-content: center;
   display: flex;
@@ -20,7 +20,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  color: #382F76;
+  color: #382f76;
 }
 
 .formAndContact {
@@ -120,7 +120,6 @@
   margin-left: 3rem;
 }
 
-
 @media only screen and (max-width: 800px) {
   .formAndContact {
     margin-top: 2rem;
@@ -129,7 +128,7 @@
   }
 
   .largeField textarea {
-    height: 100px
+    height: 100px;
   }
 
   .contactContainer {

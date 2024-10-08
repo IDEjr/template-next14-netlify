@@ -1,10 +1,9 @@
-import Inicio from '@/components/inicio'
-import TextoServicos from '@/components/textoServicos'
-import EscoposServicos from '@/components/escoposServicos'
-import FormularioServicos from '@/components/formularioServicos'
-import { handleJSONfile } from '@/utils/jsonHandler'
-import { handleJSONfiles } from '@/utils/jsonHandler'
-
+import Inicio from "@/components/inicio";
+import TextoServicos from "@/components/textoServicos";
+import EscoposServicos from "@/components/escoposServicos";
+import FormularioServicos from "@/components/formularioServicos";
+import { handleJSONfile } from "@/utils/jsonHandler";
+import { handleJSONfiles } from "@/utils/jsonHandler";
 
 export default function Servicos() {
   const foo = handleJSONfile(`./content/navFooter/footer.json`);
@@ -22,18 +21,17 @@ export default function Servicos() {
   const inicioServicos = {
     titulo: paginaServicos.inicioServicos.texto1,
     texto: paginaServicos.inicioServicos.texto2,
-  }
+  };
 
   return (
     <>
-      <Inicio titulo = {tituloServicos} imagem = {imagemServicos}/>
-      <TextoServicos {...inicioServicos}/>
-      <EscoposServicos titulo = {tituloEscoposServicos} servicos = {servicos}/>
-      <FormularioServicos contato = {contato} forms = {formularios}/>
+      <Inicio titulo={tituloServicos} imagem={imagemServicos} />
+      <TextoServicos {...inicioServicos} />
+      <EscoposServicos titulo={tituloEscoposServicos} servicos={servicos} />
+      <FormularioServicos contato={contato} forms={formularios} />
     </>
   );
 }
-
 
 // export async function getStaticProps() {
 

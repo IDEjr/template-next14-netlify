@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
-import Image from 'next/image'
-import styles from './cardMembro.module.css'
+import Image from "next/image";
+import styles from "./cardMembro.module.css";
 
 export default function CardMembros({ nome, posicao, imagem, linkedin }) {
-
   return (
     <>
       <a href={linkedin} target="_blank" className={styles.link}>
@@ -18,9 +17,9 @@ export default function CardMembros({ nome, posicao, imagem, linkedin }) {
               <Image
                 src={imagem}
                 fill
-                style={{objectFit: 'cover'}}
-                alt='Foto Membro'
-                />
+                style={{ objectFit: "cover" }}
+                alt="Foto Membro"
+              />
             </div>
           </div>
         </div>

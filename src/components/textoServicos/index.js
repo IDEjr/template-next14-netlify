@@ -1,21 +1,15 @@
-"use client"
+"use client";
 
-import styles from './textoServicos.module.css'
-
+import styles from "./textoServicos.module.css";
 
 export default function TextoServicos({ titulo, texto }) {
-
-  return(
+  return (
     <>
       <div className={styles.mainContainer}>
-        <h3 className={styles.titleContainer}>
-          {titulo}
-        </h3>
-          <p className={styles.textContainer}>
-            {texto}
-          </p>
+        <h3 className={styles.titleContainer}>{titulo}</h3>
+        <p className={styles.textContainer}>{texto}</p>
         <div className={styles.bar}></div>
       </div>
     </>
-  )
+  );
 }

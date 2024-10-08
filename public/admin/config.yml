@@ -12,12 +12,9 @@ slug:
   sanitize_replacement: "_"
 
 search: false
-locale: 'pt'
-
-
+locale: "pt"
 
 collections:
-
   # PÁGINAS--------------------------------------------------------------------------------------------------------
 
   - label: "Páginas"
@@ -35,45 +32,59 @@ collections:
             name: "inicioHome"
             widget: "object"
             fields:
-              - {label: "Imagem", name: "imagem", widget: "image"}
-              - {label: "Título", name: "titulo", widget: "string"}
-              - {label: "Texto", name: "texto", widget: "text"}
-
+              - { label: "Imagem", name: "imagem", widget: "image" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto", name: "texto", widget: "text" }
 
           - label: "Imagem Com Botão Resultados"
             name: "imgBotaoRes"
             widget: "object"
             fields:
-              - {label: "Imagem", name: "imagem", widget: "image"}
-              - {label: "Título", name: "titulo", widget: "string"}
-              - {label: "Texto", name: "texto", widget: "text", pattern: ['^.{1,450}$', "Máximo 450 carateres."]}
-              - {label: "Texto Botão", name: "textoBotao", widget: "string"}
-
+              - { label: "Imagem", name: "imagem", widget: "image" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - {
+                  label: "Texto",
+                  name: "texto",
+                  widget: "text",
+                  pattern: ["^.{1,450}$", "Máximo 450 carateres."],
+                }
+              - { label: "Texto Botão", name: "textoBotao", widget: "string" }
 
           - label: "Nossos Serviços"
             name: "servicosHome"
             widget: "object"
             fields:
-              - {label: "Título Serviços", name: "tituloServicos", widget: "string", pattern: ['^.{1,20}$', "Máximo 20 carateres."]}
-
+              - {
+                  label: "Título Serviços",
+                  name: "tituloServicos",
+                  widget: "string",
+                  pattern: ["^.{1,20}$", "Máximo 20 carateres."],
+                }
 
           - label: "Imagem Com Botão Membros"
             name: "imgBotaoMem"
             widget: "object"
             fields:
-              - {label: "Imagem", name: "imagem", widget: "image"}
-              - {label: "Título", name: "titulo", widget: "string"}
-              - {label: "Texto", name: "texto", widget: "text", pattern: ['^.{1,450}$', "Máximo 450 carateres."]}
-              - {label: "Texto Botão", name: "textoBotao", widget: "string"}
-
+              - { label: "Imagem", name: "imagem", widget: "image" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - {
+                  label: "Texto",
+                  name: "texto",
+                  widget: "text",
+                  pattern: ["^.{1,450}$", "Máximo 450 carateres."],
+                }
+              - { label: "Texto Botão", name: "textoBotao", widget: "string" }
 
           - label: "Carrossel Home"
             name: "carrosselHome"
             widget: "object"
             fields:
-              - {label: "Título Carrossel", name: "tituloCarrossel", widget: "string", pattern: ['^.{1,20}$', "Máximo 20 carateres."]}
-
-
+              - {
+                  label: "Título Carrossel",
+                  name: "tituloCarrossel",
+                  widget: "string",
+                  pattern: ["^.{1,20}$", "Máximo 20 carateres."],
+                }
 
       - label: "Quem Somos"
         name: "quemSomos"
@@ -87,12 +98,11 @@ collections:
             name: "inicioQuemSomos"
             widget: "object"
             fields:
-              - {label: "Imagem", name: "imagem", widget: "image"}
-              - {label: "Título", name: "titulo", widget: "string"}
-              - {label: "Logo", name: "logo", widget: "image"}
-              - {label: "Texto 1", name: "texto1", widget: "text"}
-              - {label: "Texto 2", name: "texto2", widget: "text"}
-
+              - { label: "Imagem", name: "imagem", widget: "image" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Logo", name: "logo", widget: "image" }
+              - { label: "Texto 1", name: "texto1", widget: "text" }
+              - { label: "Texto 2", name: "texto2", widget: "text" }
 
           - label: "Carrossel Quem Somos"
             name: "carrosselQuemSomos"
@@ -103,32 +113,48 @@ collections:
                 widget: "list"
                 min: 3
                 max: 10
-                field: {label: "Imagem", name: "imagem", widget: "image"}
-
+                field: { label: "Imagem", name: "imagem", widget: "image" }
 
           - label: "Valores"
             name: "valores"
             widget: "object"
             fields:
-              - {label: "Título", name: "titulo", widget: "string"}
-              - {label: "Título 1", name: "titulo1", widget: "string"}
-              - {label: "Texto 1", name: "texto1", widget: "text", pattern: ['^.{1,100}$', "Máximo 100 carateres."]}
-              - {label: "Título 2", name: "titulo2", widget: "string"}
-              - {label: "Texto 2", name: "texto2", widget: "text", pattern: ['^.{1,100}$', "Máximo 100 carateres."]}
-              - {label: "Título 3", name: "titulo3", widget: "string"}
-              - {label: "Texto 3", name: "texto3", widget: "text", pattern: ['^.{1,100}$', "Máximo 100 carateres."]}
-              - {label: "Título 4", name: "titulo4", widget: "string"}
-              - {label: "Texto 4", name: "texto4", widget: "text", pattern: ['^.{1,100}$', "Máximo 100 carateres."]}
-
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Título 1", name: "titulo1", widget: "string" }
+              - {
+                  label: "Texto 1",
+                  name: "texto1",
+                  widget: "text",
+                  pattern: ["^.{1,100}$", "Máximo 100 carateres."],
+                }
+              - { label: "Título 2", name: "titulo2", widget: "string" }
+              - {
+                  label: "Texto 2",
+                  name: "texto2",
+                  widget: "text",
+                  pattern: ["^.{1,100}$", "Máximo 100 carateres."],
+                }
+              - { label: "Título 3", name: "titulo3", widget: "string" }
+              - {
+                  label: "Texto 3",
+                  name: "texto3",
+                  widget: "text",
+                  pattern: ["^.{1,100}$", "Máximo 100 carateres."],
+                }
+              - { label: "Título 4", name: "titulo4", widget: "string" }
+              - {
+                  label: "Texto 4",
+                  name: "texto4",
+                  widget: "text",
+                  pattern: ["^.{1,100}$", "Máximo 100 carateres."],
+                }
 
           - label: "Painel Membros"
             name: "painelMembros"
             widget: "object"
             fields:
-              - {label: "Logo", name: "logo", widget: "image"}
-              - {label: "Título", name: "titulo", widget: "string"}
-
-
+              - { label: "Logo", name: "logo", widget: "image" }
+              - { label: "Título", name: "titulo", widget: "string" }
 
       - label: "Serviços"
         name: "servicos"
@@ -142,19 +168,30 @@ collections:
             name: "inicioServicos"
             widget: "object"
             fields:
-              - {label: "Imagem", name: "imagem", widget: "image"}
-              - {label: "Título", name: "titulo", widget: "string"}
-              - {label: "Texto 1", name: "texto1", widget: "text", pattern: ['^.{1,50}$', "Máximo 50 carateres."]}
-              - {label: "Texto 2", name: "texto2", widget: "text", pattern: ['^.{1,600}$', "Máximo 600 carateres."]}
-
+              - { label: "Imagem", name: "imagem", widget: "image" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - {
+                  label: "Texto 1",
+                  name: "texto1",
+                  widget: "text",
+                  pattern: ["^.{1,50}$", "Máximo 50 carateres."],
+                }
+              - {
+                  label: "Texto 2",
+                  name: "texto2",
+                  widget: "text",
+                  pattern: ["^.{1,600}$", "Máximo 600 carateres."],
+                }
 
           - label: "Escopos Servicos"
             name: "escoposServicos"
             widget: "object"
             fields:
-              - {label: "Título Escopos Servicos", name: "titulo", widget: "string"}
-
-
+              - {
+                  label: "Título Escopos Servicos",
+                  name: "titulo",
+                  widget: "string",
+                }
 
       - label: "Blog"
         name: "blog"
@@ -168,12 +205,14 @@ collections:
             name: "inicioBlog"
             widget: "object"
             fields:
-              - {label: "Título", name: "titulo", widget: "string"}
-              - {label: "Texto Botão Post", name: "textoBotao", widget: "string"}
+              - { label: "Título", name: "titulo", widget: "string" }
+              - {
+                  label: "Texto Botão Post",
+                  name: "textoBotao",
+                  widget: "string",
+                }
 
-
-
-# OOUTROS--------------------------------------------------------------------------------------------------------
+  # OOUTROS--------------------------------------------------------------------------------------------------------
 
   - label: "Gêneros"
     name: "generos"
@@ -185,9 +224,12 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Gênero", name: "genero", widget: "string", pattern: ['^.{1,30}$', "Máximo 30 carateres."]}
-
-
+      - {
+          label: "Gênero",
+          name: "genero",
+          widget: "string",
+          pattern: ["^.{1,30}$", "Máximo 30 carateres."],
+        }
 
   - label: "Posts"
     name: "posts"
@@ -199,17 +241,56 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Visível", name: "bool", widget: "boolean", default: true}
-      - {label: "Gênero", name: "genero", widget: "relation", collection: "generos", search_fields: ["genero"], display_fields: ["genero"], value_field: "genero", default: ["Outros"]}
-      - {label: "Autor(a)", name: "autor", widget: "relation", collection: "membros", search_fields: ["nome"], display_fields: ["nome"], value_field: "nome"}
-      - {label: "LinkedIn", name: "linkedin", widget: "relation", collection: "membros", search_fields: ["nome"], display_fields: ["linkedin"], value_field: "linkedin", required: false}
-      - {label: "Data", name: "data", widget: "date", date_format: "DD.MM.YYYY"}
-      - {label: "Título", name: "titulo", widget: "string", pattern: ['^.{1,40}$', "Máximo 40 carateres."]}
-      - {label: "Imagem de Capa", name: "imagemCapa", widget: "image"}
-      - {label: "Prévia", name: "previa", widget: "text", pattern: ['^.{1,60}$', "Máximo 60 carateres."]}
-      - {label: "Conteúdo", name: "conteudo", widget: "markdown"}
-
-
+      - { label: "Visível", name: "bool", widget: "boolean", default: true }
+      - {
+          label: "Gênero",
+          name: "genero",
+          widget: "relation",
+          collection: "generos",
+          search_fields: ["genero"],
+          display_fields: ["genero"],
+          value_field: "genero",
+          default: ["Outros"],
+        }
+      - {
+          label: "Autor(a)",
+          name: "autor",
+          widget: "relation",
+          collection: "membros",
+          search_fields: ["nome"],
+          display_fields: ["nome"],
+          value_field: "nome",
+        }
+      - {
+          label: "LinkedIn",
+          name: "linkedin",
+          widget: "relation",
+          collection: "membros",
+          search_fields: ["nome"],
+          display_fields: ["linkedin"],
+          value_field: "linkedin",
+          required: false,
+        }
+      - {
+          label: "Data",
+          name: "data",
+          widget: "date",
+          date_format: "DD.MM.YYYY",
+        }
+      - {
+          label: "Título",
+          name: "titulo",
+          widget: "string",
+          pattern: ["^.{1,40}$", "Máximo 40 carateres."],
+        }
+      - { label: "Imagem de Capa", name: "imagemCapa", widget: "image" }
+      - {
+          label: "Prévia",
+          name: "previa",
+          widget: "text",
+          pattern: ["^.{1,60}$", "Máximo 60 carateres."],
+        }
+      - { label: "Conteúdo", name: "conteudo", widget: "markdown" }
 
   - label: "Membros"
     name: "membros"
@@ -221,17 +302,51 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Nome e sobrenome", name: "nome", widget: "string", pattern: ['^.{1,30}$', "Máximo 30 carateres."]}
-      - {label: "Imagem", name: "imagem", widget: "image"}
-      - {label: "Posição", name: "posicao", widget: "select", options: ["Presidência", "Vice-Presidência",
-                                                                        "Diretoria Projetos", "Assessoria Projetos", "Gerência Projetos", "Consultoria Projetos",
-                                                                        "Diretoria Financeiro", "Assessoria Financeiro", "Gerência Financeiro", "Consultoria Financeiro",
-                                                                        "Diretoria Comercial", "Assessoria Comercial", "Gerência Comercial", "Consultoria Comercial",
-                                                                        "Diretoria Gestão de Pessoas", "Assessoria Gestão de Pessoas", "Gerência Gestão de Pessoas", "Consultoria Gestão de Pessoas",
-                                                                        "Diretoria Marketing", "Assessoria Marketing", "Gerência Marketing", "Consultoria Marketing",
-                                                                        "Trainee"], default: ["Trainee"]}
-      - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
-
+      - {
+          label: "Nome e sobrenome",
+          name: "nome",
+          widget: "string",
+          pattern: ["^.{1,30}$", "Máximo 30 carateres."],
+        }
+      - { label: "Imagem", name: "imagem", widget: "image" }
+      - {
+          label: "Posição",
+          name: "posicao",
+          widget: "select",
+          options:
+            [
+              "Presidência",
+              "Vice-Presidência",
+              "Diretoria Projetos",
+              "Assessoria Projetos",
+              "Gerência Projetos",
+              "Consultoria Projetos",
+              "Diretoria Financeiro",
+              "Assessoria Financeiro",
+              "Gerência Financeiro",
+              "Consultoria Financeiro",
+              "Diretoria Comercial",
+              "Assessoria Comercial",
+              "Gerência Comercial",
+              "Consultoria Comercial",
+              "Diretoria Gestão de Pessoas",
+              "Assessoria Gestão de Pessoas",
+              "Gerência Gestão de Pessoas",
+              "Consultoria Gestão de Pessoas",
+              "Diretoria Marketing",
+              "Assessoria Marketing",
+              "Gerência Marketing",
+              "Consultoria Marketing",
+              "Trainee",
+            ],
+          default: ["Trainee"],
+        }
+      - {
+          label: "LinkedIn",
+          name: "linkedin",
+          widget: "string",
+          required: false,
+        }
 
   - label: "Serviços"
     name: "servicos"
@@ -243,10 +358,19 @@ collections:
     editor:
       preview: false
     fields:
-      - {label: "Serviço", name: "nome", widget: "string", pattern: ['^.{1,35}$', "Máximo 35 carateres."]}
-      - {label: "Imagem", name: "imagem", widget: "image"}
-      - {label: "Descrição", name: "descricao", widget: "text", pattern: ['^.{1,500}$', "Máximo 500 carateres."]}
-
+      - {
+          label: "Serviço",
+          name: "nome",
+          widget: "string",
+          pattern: ["^.{1,35}$", "Máximo 35 carateres."],
+        }
+      - { label: "Imagem", name: "imagem", widget: "image" }
+      - {
+          label: "Descrição",
+          name: "descricao",
+          widget: "text",
+          pattern: ["^.{1,500}$", "Máximo 500 carateres."],
+        }
 
   - label: "Navbar e Footer"
     name: "navFooter"
@@ -259,8 +383,7 @@ collections:
         extension: "json"
         format: "json"
         fields:
-          - {label: "Logo", name: "logo", widget: "image"}
-
+          - { label: "Logo", name: "logo", widget: "image" }
 
       - label: "Footer"
         name: "footer"
@@ -268,17 +391,16 @@ collections:
         extension: "json"
         format: "json"
         fields:
-          - {label: "Logo", name: "logo", widget: "image"}
-          - {label: "Texto Contato", name: "textoContato", widget: "string"}
-          - {label: "Copyright", name: "copy", widget: "string"}
-          - {label: "Watermark1", name: "watermark1", widget: "image"}
-          - {label: "Link1", name: "link1", widget: "string"}
-          - {label: "Watermark2", name: "watermark2", widget: "image"}
-          - {label: "Link2", name: "link2", widget: "string"}
-          - {label: "Watermark3", name: "watermark3", widget: "image"}
-          - {label: "Link3", name: "link3", widget: "string"}
-          - {label: "Background", name: "background", widget: "image"}
-
+          - { label: "Logo", name: "logo", widget: "image" }
+          - { label: "Texto Contato", name: "textoContato", widget: "string" }
+          - { label: "Copyright", name: "copy", widget: "string" }
+          - { label: "Watermark1", name: "watermark1", widget: "image" }
+          - { label: "Link1", name: "link1", widget: "string" }
+          - { label: "Watermark2", name: "watermark2", widget: "image" }
+          - { label: "Link2", name: "link2", widget: "string" }
+          - { label: "Watermark3", name: "watermark3", widget: "image" }
+          - { label: "Link3", name: "link3", widget: "string" }
+          - { label: "Background", name: "background", widget: "image" }
 
   - label: "Formulários"
     name: "forms"
@@ -291,12 +413,15 @@ collections:
         extension: "json"
         format: "json"
         fields:
-          - {label: "Logo Formulários", name: "logo", widget: "image"}
-          - {label: "Título Membros", name: "tituloMembros", widget: "string"}
-          - {label: "Título Servicos", name: "tituloServicos", widget: "string"}
-          - {label: "Endereço 1", name: "endereco1", widget: "string"}
-          - {label: "Endereço 2", name: "endereco2", widget: "string"}
-
+          - { label: "Logo Formulários", name: "logo", widget: "image" }
+          - { label: "Título Membros", name: "tituloMembros", widget: "string" }
+          - {
+              label: "Título Servicos",
+              name: "tituloServicos",
+              widget: "string",
+            }
+          - { label: "Endereço 1", name: "endereco1", widget: "string" }
+          - { label: "Endereço 2", name: "endereco2", widget: "string" }
 
   - label: "Contato"
     name: "contato"
@@ -309,7 +434,7 @@ collections:
         extension: "json"
         format: "json"
         fields:
-          - {label: "Linkedin", name: "linkedin", widget: "string"}
-          - {label: "Email", name: "email", widget: "string"}
-          - {label: "Instagram", name: "instagram", widget: "string"}
-          - {label: "Celular", name: "celular", widget: "string"}
+          - { label: "Linkedin", name: "linkedin", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Instagram", name: "instagram", widget: "string" }
+          - { label: "Celular", name: "celular", widget: "string" }

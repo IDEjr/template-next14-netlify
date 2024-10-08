@@ -1,21 +1,20 @@
-import MenuBlog from '@/components/menuBlog'
-import CarrosselBlog from '@/components/carrosselBlog'
-import { handleJSONfiles } from '@/utils/jsonHandler'
-import { handleJSONfile } from '@/utils/jsonHandler'
+import MenuBlog from "@/components/menuBlog";
+import CarrosselBlog from "@/components/carrosselBlog";
+import { handleJSONfiles } from "@/utils/jsonHandler";
+import { handleJSONfile } from "@/utils/jsonHandler";
 
 export default function Blog() {
-  const posts = handleJSONfiles('./content/posts');
+  const posts = handleJSONfiles("./content/posts");
   const blog = handleJSONfile(`./content/paginas/blog.json`);
   const generos = handleJSONfiles(`./content/generos`);
 
   return (
     <>
-      <CarrosselBlog posts = {posts} titulo = {blog.inicioBlog.titulo}/>
-      <MenuBlog posts = {posts} generos = {generos}/>
+      <CarrosselBlog posts={posts} titulo={blog.inicioBlog.titulo} />
+      <MenuBlog posts={posts} generos={generos} />
     </>
   );
 }
-
 
 // export async function getStaticProps() {
 

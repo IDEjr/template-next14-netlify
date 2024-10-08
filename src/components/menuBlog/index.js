@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
-import styles from './menuBlog.module.css'
-import GridPosts from '@/components/gridPosts'
-import { useState } from 'react'
+import styles from "./menuBlog.module.css";
+import GridPosts from "@/components/gridPosts";
+import { useState } from "react";
 // import { GoChevronDown, GoChevronUp } from 'react-icons/go'
-
 
 export default function MenuBlog({ posts, generos }) {
   const [isActive, setIsactive] = useState(false);
@@ -68,9 +67,7 @@ export default function MenuBlog({ posts, generos }) {
           <ul className={styles.lista}>
             <div className={styles.containerMobile}>
               <div className={styles.tituloEBotaoMobile}>
-                <h3 className={styles.tituloMobile}>
-                  {titulo}
-                </h3>
+                <h3 className={styles.tituloMobile}>{titulo}</h3>
                 {/* <div
                   onClick={() => setIsactive(!isActive)}
                   className={styles.optionButton}
@@ -79,14 +76,12 @@ export default function MenuBlog({ posts, generos }) {
                 </div> */}
               </div>
               <div className={styles.aaa}>
-              <div
-                className={
-                  `${styles.dropdownInactive}
-                  ${isActive ? styles.dropdownActive : null}`
-                }
-              >
-                {isActive && <RenderOptions />}
-              </div>
+                <div
+                  className={`${styles.dropdownInactive}
+                  ${isActive ? styles.dropdownActive : null}`}
+                >
+                  {isActive && <RenderOptions />}
+                </div>
               </div>
             </div>
             <div className={styles.containerDesktop}>

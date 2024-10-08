@@ -16,11 +16,10 @@
 }
 
 .bar {
-  background-color: #382F76;
+  background-color: #382f76;
   width: 30%;
   height: 8px;
 }
-
 
 @media only screen and (max-width: 756px) {
   .titleContainer {

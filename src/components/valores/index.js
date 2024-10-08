@@ -1,11 +1,9 @@
-"use client"
+"use client";
 
-import styles from './valores.module.css'
-
+import styles from "./valores.module.css";
 
 export default function Valores({ ...escritos }) {
-
-  return(
+  return (
     <>
       <div className={styles.containerValores}>
         <div className={styles.middle}>
@@ -29,5 +27,5 @@ export default function Valores({ ...escritos }) {
         </div>
       </div>
     </>
-  )
+  );
 }

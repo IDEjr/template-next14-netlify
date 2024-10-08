@@ -1,15 +1,14 @@
-"use client"
+"use client";
 
-import styles from './formulario.module.css'
-import { sendContactForm } from '@/lib/sendForm'
-import { useForm } from 'react-hook-form'
-import { isEmail, isMobilePhone } from 'validator'
+import styles from "./formulario.module.css";
+import { sendContactForm } from "@/lib/sendForm";
+import { useForm } from "react-hook-form";
+import { isEmail, isMobilePhone } from "validator";
 
+function formatPhoneNumber(value) {
+  const numericValue = value.replace(/\D/g, "");
 
-function formatPhoneNumber( value ) {
-  const numericValue = value.replace(/\D/g, '');
-  
-  let formattedValue = '';
+  let formattedValue = "";
   if (numericValue.length >= 1) {
     formattedValue += `(${numericValue.slice(0, 2)}`;
   }
@@ -19,11 +18,11 @@ function formatPhoneNumber( value ) {
   if (numericValue.length >= 7) {
     formattedValue += `-${numericValue.slice(7, 11)}`;
   }
-  
+
   return formattedValue;
 }
 
-function allowToEnterPhoneNumber( event ) {
+function allowToEnterPhoneNumber(event) {
   const charCode = event.keyCode || event.which;
 
   // Permite backspace
@@ -32,7 +31,9 @@ function allowToEnterPhoneNumber( event ) {
   }
 
   const currentValue = event.target.value;
-  const formattedValue = formatPhoneNumber(currentValue + String.fromCharCode(charCode));
+  const formattedValue = formatPhoneNumber(
+    currentValue + String.fromCharCode(charCode),
+  );
 
   event.target.value = formattedValue;
 
@@ -40,7 +41,6 @@ function allowToEnterPhoneNumber( event ) {
 }
 
 export default function Formulario({ form }) {
-
   const {
     register,
     handleSubmit,
@@ -51,20 +51,17 @@ export default function Formulario({ form }) {
   const onSubmit = async (data) => {
     try {
       await sendContactForm(data, "contact");
-      reset()
+      reset();
     } catch (error) {
       console.error("Error sending contact form:", error);
     }
   };
 
-
-  return(
+  return (
     <>
-      <div id='contato'></div>
+      <div id="contato"></div>
       <div className={styles.mainContainer}>
-        <h2 className={styles.title}>
-          {form.titulo}
-        </h2>
+        <h2 className={styles.title}>{form.titulo}</h2>
         <div className={styles.form}>
           <div className={styles.formContainer}>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -95,7 +92,7 @@ export default function Formulario({ form }) {
                   <p className={styles.error_message}>Campo obrigatório.</p>
                 )}
                 {errors?.email?.type === "validate" && (
-                <p className={styles.error_message}>Email inválido</p>
+                  <p className={styles.error_message}>Email inválido</p>
                 )}
               </div>
               <div className={styles.mediumField}>
@@ -108,7 +105,7 @@ export default function Formulario({ form }) {
                   placeholder="Celular*"
                   {...register("celular", {
                     required: true,
-                    validate: (value) => isMobilePhone(value, 'pt-BR'),
+                    validate: (value) => isMobilePhone(value, "pt-BR"),
                   })}
                 />
                 {errors?.celular?.type === "required" && (
@@ -151,4 +148,4 @@ export default function Formulario({ form }) {
       </div>
     </>
   );
-};
+}

@@ -1,23 +1,22 @@
-"use client"
+"use client";
 
-import Image from 'next/image'
-import styles from './formularioServicos.module.css'
-import { sendContactForm } from '@/lib/sendForm'
-import { useForm } from 'react-hook-form'
-import { isEmail, isMobilePhone } from 'validator'
-import { FaRegComment, FaRegEnvelope, FaHome } from 'react-icons/fa'
+import Image from "next/image";
+import styles from "./formularioServicos.module.css";
+import { sendContactForm } from "@/lib/sendForm";
+import { useForm } from "react-hook-form";
+import { isEmail, isMobilePhone } from "validator";
+import { FaRegComment, FaRegEnvelope, FaHome } from "react-icons/fa";
 
-
-function createWhatsAppLink( celular ) {
-  const celularPuro = celular.replace(/[^\d]/g, '');
+function createWhatsAppLink(celular) {
+  const celularPuro = celular.replace(/[^\d]/g, "");
 
   return `https://wa.me/${celularPuro}`;
 }
 
-function formatPhoneNumber( value ) {
-  const numericValue = value.replace(/\D/g, '');
-  
-  let formattedValue = '';
+function formatPhoneNumber(value) {
+  const numericValue = value.replace(/\D/g, "");
+
+  let formattedValue = "";
   if (numericValue.length >= 1) {
     formattedValue += `(${numericValue.slice(0, 2)}`;
   }
@@ -27,11 +26,11 @@ function formatPhoneNumber( value ) {
   if (numericValue.length >= 7) {
     formattedValue += `-${numericValue.slice(7, 11)}`;
   }
-  
+
   return formattedValue;
 }
 
-function allowToEnterPhoneNumber( event ) {
+function allowToEnterPhoneNumber(event) {
   const charCode = event.keyCode || event.which;
 
   // Permite backspace
@@ -40,7 +39,9 @@ function allowToEnterPhoneNumber( event ) {
   }
 
   const currentValue = event.target.value;
-  const formattedValue = formatPhoneNumber(currentValue + String.fromCharCode(charCode));
+  const formattedValue = formatPhoneNumber(
+    currentValue + String.fromCharCode(charCode),
+  );
 
   event.target.value = formattedValue;
 
@@ -48,7 +49,6 @@ function allowToEnterPhoneNumber( event ) {
 }
 
 export default function FormularioServicos({ contato, forms }) {
-
   const {
     register,
     handleSubmit,
@@ -59,30 +59,22 @@ export default function FormularioServicos({ contato, forms }) {
   const onSubmit = async (data) => {
     try {
       await sendContactForm(data, "contactClients");
-      reset()
+      reset();
     } catch (error) {
       console.error("Error sending contact form:", error);
     }
   };
-  
 
   const whatsappLink = createWhatsAppLink(contato.celular);
 
-  return(
+  return (
     <>
-      <div id='formServicos'></div>
+      <div id="formServicos"></div>
       <div className={styles.mainContainer}>
         <div className={styles.logo}>
-          <Image
-            src={forms.logo}
-            width={150}
-            height={150}
-            alt="Logo"
-          />
+          <Image src={forms.logo} width={150} height={150} alt="Logo" />
         </div>
-        <h2 className={styles.title}>
-          {forms.tituloServicos}
-        </h2>
+        <h2 className={styles.title}>{forms.tituloServicos}</h2>
         <div className={styles.formAndContact}>
           <div className={styles.formContainer}>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -113,7 +105,7 @@ export default function FormularioServicos({ contato, forms }) {
                   <p className={styles.error_message}>Campo obrigatório.</p>
                 )}
                 {errors?.email?.type === "validate" && (
-                <p className={styles.error_message}>Email inválido</p>
+                  <p className={styles.error_message}>Email inválido</p>
                 )}
               </div>
               <div className={styles.mediumField}>
@@ -126,7 +118,7 @@ export default function FormularioServicos({ contato, forms }) {
                   placeholder="Celular*"
                   {...register("celular", {
                     required: true,
-                    validate: (value) => isMobilePhone(value, 'pt-BR'),
+                    validate: (value) => isMobilePhone(value, "pt-BR"),
                   })}
                 />
                 {errors?.celular?.type === "required" && (
@@ -166,20 +158,32 @@ export default function FormularioServicos({ contato, forms }) {
             </form>
           </div>
           <div className={styles.contactContainer}>
-            <a href={whatsappLink}  target="_blank" className={styles.contactRows}>
-              <div><FaRegComment size={30} className={styles.icons}/></div>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              className={styles.contactRows}
+            >
+              <div>
+                <FaRegComment size={30} className={styles.icons} />
+              </div>
               <div>{contato.celular}</div>
             </a>
             <a href={`mailto:${contato.email}`} className={styles.contactRows}>
-              <div><FaRegEnvelope size={30} className={styles.icons}/></div>
+              <div>
+                <FaRegEnvelope size={30} className={styles.icons} />
+              </div>
               <div>{contato.email}</div>
             </a>
             <div className={styles.contactRows}>
-              <div><FaHome size={30} className={styles.icons}/></div>
+              <div>
+                <FaHome size={30} className={styles.icons} />
+              </div>
               <div>{contato.endereco}</div>
             </div>
             <div className={styles.contactRows}>
-              <div><FaHome size={30} className={styles.icons}/></div>
+              <div>
+                <FaHome size={30} className={styles.icons} />
+              </div>
               <div>{contato.endereco}</div>
             </div>
           </div>
@@ -187,4 +191,4 @@ export default function FormularioServicos({ contato, forms }) {
       </div>
     </>
   );
-};
+}

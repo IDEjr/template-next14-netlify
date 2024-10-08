@@ -4,7 +4,7 @@ header .logo {
   margin-left: 100px;
   position: relative;
   width: 100px;
-  height:  100px;
+  height: 100px;
 }
 
 .cabecalho {
@@ -27,7 +27,7 @@ header .logo {
 
 .anchorStuff a {
   margin: 0 1rem;
-  color: #D9D9D9;
+  color: #d9d9d9;
   text-decoration: none;
   font-size: 1.2rem;
   transition: 0.4s ease;
@@ -56,11 +56,10 @@ header .logo {
 }
 
 .socialNetworks {
-  color:#382F76 !important;
+  color: #382f76 !important;
   font-size: 1.5em;
   margin-top: 150px;
 }
-
 
 @media only screen and (min-width: 1024px) {
   .cabecalho .navBtn {
@@ -76,7 +75,6 @@ header .logo {
     display: none;
   }
 }
-
 
 @media only screen and (max-width: 1024px) {
   .cabecalho .navBtn {
@@ -98,11 +96,11 @@ header .logo {
     background-color: #262626;
     transition: 1s;
     z-index: 999;
-    
+
     border-bottom: 5px solid black;
     border-image: linear-gradient(to right, red, blue);
   }
-  
+
   .cabecalho .responsiveNav {
     transform: translateY(100vh);
     width: 300px;
@@ -114,14 +112,13 @@ header .logo {
     color: white;
     right: 2rem;
   }
-  
+
   .navbar .navLogoBtn {
     position: absolute;
     top: 2rem;
     right: auto;
     left: auto;
   }
-  
 
   .navbar a {
     font-size: 1.5rem;
